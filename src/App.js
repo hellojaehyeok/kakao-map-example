@@ -46,6 +46,17 @@ function App() {
   const roadViewRef = useRef(); 
   const roadBtnRef = useRef(); 
 
+
+  const onClickZoom = (isZoomIn) => {
+    if(isZoomIn){
+      if(mapLevel==1){alert("최소 레벨입니다."); return}
+      setMapLevel(mapLevel - 1)
+    }else{
+      if(mapLevel==14){alert("최대 레벨입니다."); return}
+      setMapLevel(mapLevel + 1)
+    }
+  }
+
   return (
     <Container>
       <ControlBtnWrap>
@@ -55,6 +66,10 @@ function App() {
         <ControlBtn onClick={() => setOverlayMapType("traffic")}>Overlay type : traffic</ControlBtn>
         <ControlBtn onClick={() => setOverlayMapType("terrain")}>Overlay type : terrain</ControlBtn>
         <ControlBtn onClick={() => setOverlayMapType("use_district")}>Overlay type : use_district</ControlBtn>
+        <ControlBtn onClick={() => onClickZoom(true)}>Map zoomin</ControlBtn>
+        <ControlBtn onClick={() => onClickZoom(false)}>Map zoomout</ControlBtn>
+        <ControlBtn onClick={() => setIsMyLocation(true)}>Current location</ControlBtn>
+        <ControlBtn onClick={() => setIsMarker(!isMarker)}>Maker toggle</ControlBtn>
       </ControlBtnWrap>
 
       <KaoKaoMapWrap>
