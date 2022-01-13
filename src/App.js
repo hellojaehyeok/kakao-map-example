@@ -70,6 +70,8 @@ function App() {
         <ControlBtn onClick={() => onClickZoom(false)}>Map zoomout</ControlBtn>
         <ControlBtn onClick={() => setIsMyLocation(true)}>Current location</ControlBtn>
         <ControlBtn onClick={() => setIsMarker(!isMarker)}>Maker toggle</ControlBtn>
+        <ControlBtn ref={roadBtnRef} onClick={() => setIsRoadView(!isRoadView)}>RoadView toggle</ControlBtn>
+        <RoadView ref={roadViewRef}></RoadView>
       </ControlBtnWrap>
 
       <KaoKaoMapWrap>
@@ -82,10 +84,9 @@ function App() {
           makerOption={makerOption}
           isMarker={isMarker}
           clustererOption={clustererOption}
-
-          // roadViewRef={roadViewRef}
-          // roadBtnRef={roadBtnRef}
-          // isRoadView={isRoadView}
+          roadViewRef={roadViewRef}
+          roadBtnRef={roadBtnRef}
+          isRoadView={isRoadView}
         />
       </KaoKaoMapWrap>
     </Container>
@@ -122,4 +123,9 @@ const ControlBtn = styled.button`
 const KaoKaoMapWrap = styled.div`
   width: 80%;
   height: 100%;
+`
+const RoadView = styled.div`
+  width: 300px;
+  height: 300px;
+  border: 1px solid #454545;
 `
