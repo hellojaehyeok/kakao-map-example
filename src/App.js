@@ -41,6 +41,11 @@ function App() {
     minLevel:2,
   }
 
+  // 맵 중앙 좌표 혹은 레벨 변경 시 일어나는 함수
+  const idleMap = (result) => {
+    console.log(result);
+  }
+
   // 로드뷰 토글
   const [isRoadView, setIsRoadView] = useState(false);
   const roadViewRef = useRef(); 
@@ -87,6 +92,7 @@ function App() {
           roadViewRef={roadViewRef}
           roadBtnRef={roadBtnRef}
           isRoadView={isRoadView}
+          idleMap={idleMap}
         />
       </KaoKaoMapWrap>
     </Container>

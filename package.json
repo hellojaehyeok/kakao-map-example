@@ -6,7 +6,7 @@
   "dependencies": {
     "@babel/cli": "^7.16.0",
     "@babel/preset-react": "^7.16.5",
-    "@hellojh/react-kakao-map": "^0.0.8",
+    "@hellojh/react-kakao-map": "^0.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
